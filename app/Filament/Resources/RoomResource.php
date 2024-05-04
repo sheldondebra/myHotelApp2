@@ -19,6 +19,8 @@ class RoomResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Room Settings';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -26,7 +28,7 @@ class RoomResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('room_type_id')
+                Forms\Components\Select::make('room_typse_id')
                     ->relationship('roomtype', 'name')
                     ->required(),
                 Forms\Components\TextInput::make('Occupancy')
