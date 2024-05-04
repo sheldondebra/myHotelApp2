@@ -23,14 +23,20 @@ class StaffResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Section::make('Personal Information', [
                 Forms\Components\TextInput::make('full_name')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('date_of_birth')
                     ->required(),
                 Forms\Components\Select::make('gender')
-
+                    //select options for gender
+                    ->options([
+                        "Male" => "Male",
+                        "Female" => "Female",
+                    ])
                     ->default(null),
+                    ]),
                 Forms\Components\TextInput::make('address')
                     ->required()
                     ->maxLength(255),
@@ -52,9 +58,17 @@ class StaffResource extends Resource
                     ->tel()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('position')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\Select::make('position')
+                    //select options for positions
+                    ->options(
+                        [
+                            "Admin" => "Admin",
+                            "Manager" => "Manager",
+                            "Employee" => "Employee",
+                        ]
+                    )
+                    ->required(),
+                        ]),
                 Forms\Components\TextInput::make('department')
                     ->required()
                     ->maxLength(255),
@@ -62,7 +76,13 @@ class StaffResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('employment_status')
                     ->required(),
-                Forms\Components\TextInput::make('employment_type')
+                Forms\Components\Select::make('employment_type')
+                    ->options([
+                        "Full-Time" => "Full-Time",
+                        "Part-Time" => "Part-Time",
+                        "Contract" => "Contract",
+                        "Temporary" => "Temporary",
+                    ])
                     ->required(),
                 Forms\Components\TextInput::make('shift_schedule')
                     ->maxLength(255)
