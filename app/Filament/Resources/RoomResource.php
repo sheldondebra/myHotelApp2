@@ -28,9 +28,9 @@ class RoomResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('room_typse_id')
-                    ->relationship('roomtype', 'name')
-                    ->required(),
+                Forms\Components\Select::make('	room_type_id')
+                    ->relationship('roomtype', 'name'),
+
                 Forms\Components\TextInput::make('Occupancy')
                     ->required()
                     ->numeric(),
