@@ -41,4 +41,10 @@ class staff extends Model
         'termination_date',
         'termination_reason',
      ];
+
+
+     public function housekeepingStaff(){
+
+        return $this->hasMany(HousekeepingStaff::class,'staff_id');
+     }
 }
