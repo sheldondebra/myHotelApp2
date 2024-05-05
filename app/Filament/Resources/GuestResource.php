@@ -17,7 +17,7 @@ class GuestResource extends Resource
 {
     protected static ?string $model = Guest::class;
 
-    protected static ?string $navigationGroup = 'Bookings';
+    protected static ?string $navigationGroup = 'Reservations';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
