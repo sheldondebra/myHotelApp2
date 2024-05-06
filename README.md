@@ -105,6 +105,8 @@ php artisan superduper:lang-translate en fr --json
 
 #### Plugins
 
+Add Plugin Later
+
 These are [Filament Plugins](https://filamentphp.com/plugins) use for this project.
 
 | **Plugin**                                                                                          | **Author**                                          |
