@@ -31,16 +31,14 @@ class BookingsResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('check_out_date')
                     ->required(),
-                Forms\Components\TextInput::make('room_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('services_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Select::make('room_id')
+                ->relationship('room', 'name')
+                    ->required(),
+                Forms\Components\Select::make('services_id')
+                    ->relationship('services', 'name')
+                    ->required(),
                 Forms\Components\TextInput::make('total_amount')
-                    ->disabled()
                     ->prefix('GHS')
-                    ->required()
                     ->numeric(),
                 //calculate the number of night from the check_in_date and check_out_date
                 Forms\Components\TextInput::make('number_of_nights')
