@@ -14,10 +14,15 @@ return new class extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('room_types_id')->constrained();
+            $table->unsignedBigInteger('roomtype_id');
             $table->boolean('available')->default(true);
             $table->integer('Occupancy');
             $table->string('Description');
+            $table->foreign('roomtype_id')
+                ->references('id')
+                ->on('roomtypes')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

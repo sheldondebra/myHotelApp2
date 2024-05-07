@@ -28,13 +28,13 @@ class RoomResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('room_typse_id')
+                Forms\Components\Select::make('roomtype_id')
                     ->relationship('roomtype', 'name')
                     ->required(),
-                Forms\Components\TextInput::make('Occupancy')
+                Forms\Components\TextInput::make('occupancy')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('Description')
+                Forms\Components\TextInput::make('description')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Toggle::make('available')
@@ -49,8 +49,7 @@ class RoomResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('room_type_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('roomtype.name')
                     ->sortable(),
                 Tables\Columns\IconColumn::make('available')
                     ->boolean(),

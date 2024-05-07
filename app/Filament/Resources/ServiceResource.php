@@ -29,7 +29,6 @@ class ServiceResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('Price')
                     ->required()
-
                     ->prefix('GHS')
                     ->numeric()
                     ->default(0),
@@ -47,7 +46,6 @@ class ServiceResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('Price')
                     ->numeric()
-                    ->sortable()
                      ->money(),
                 Tables\Columns\TextColumn::make('Quantity')
                     ->numeric()
